@@ -1,0 +1,49 @@
+/* Song CSS styles */
+.info {
+  padding: 10px;
+}
+
+.name {
+  color: #405061;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.songinfo {
+  width: 95%;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.item {
+  padding: 5px 10px 5px 10px;
+}
+
+.item > i{
+  color: #9bdea4;
+  font-size: 14px;
+  padding-right:10px;
+}
+
+.selection {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}

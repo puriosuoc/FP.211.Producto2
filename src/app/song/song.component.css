@@ -48,6 +48,11 @@
   position: relative;
 }
 
+.caratula {
+  width: 200px;
+  border-radius: 6px;
+}
+
 .alert {
   text-align: center;
   font-size: 30px;

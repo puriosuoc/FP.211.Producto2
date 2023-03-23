@@ -55,6 +55,7 @@ h2 {
 
 .titulo{
   font-weight: bold;
+  margin-right: 10px;
 }
 
 .subtitulo{
@@ -102,4 +103,11 @@ h2 {
   height: 1.8em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
+}
+
+.miniportada{
+  width: 40px;
+  border-radius: 4px;
+  margin-left: 5px;
+  margin-right: 10px;
 }

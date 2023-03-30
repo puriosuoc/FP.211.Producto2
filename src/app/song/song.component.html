@@ -1,8 +1,8 @@
-  <div class="info">
+  <div class="container">
 
-    <div *ngIf="selectedSong">
+    <div *ngIf="selectedSong" class="info">
 
-      <div class="cover"><img src="{{selectedSong.url}}" class="caratula"></div>
+     <div class="cover"><img src="{{selectedSong.image}}" class="caratula"></div>
 
       <div class="name">{{selectedSong.tittle}}</div>
 

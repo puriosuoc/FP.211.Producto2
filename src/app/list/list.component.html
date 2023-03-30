@@ -2,24 +2,24 @@
 
   <div class="list">
 
-    <h2>Welcome! 🥳</h2>
+    <div class="filtros">
+
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar canciones">
+
+    </div>
+
       <ul class="songs">
         <li *ngFor="let song of songs"
             [class.selected]="song === selectedSong"
             (click)="onSelect(song)">
           <div class="songlist">
-            <div class="portada"><img src="{{song.url}}" class="miniportada"></div>
+            <div class="portada"><img src="{{song.image}}" class="miniportada"></div>
             <div class="titulo">{{song.tittle}}</div>
             <div class="subtitulo">{{song.subtittle}}</div>
           </div>
         </li>
       </ul>
 
-  </div>
-
-  <div class="song">
-    <app-song></app-song>
-    <app-player></app-player>
   </div>
 
 </div>

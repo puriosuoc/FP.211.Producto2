@@ -9,6 +9,7 @@ import { ListComponent } from './list/list.component';
 import {FormsModule} from "@angular/forms";
 import { PlayerComponent } from './player/player.component';
 import {SongService} from "./song.service";
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {SongService} from "./song.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [
     SongService

@@ -9,25 +9,19 @@
 
 .player {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-
-
 }
 
-#play {
-  padding: 0px 15px 0px 15px;
+.material-icons {
+  font-size: 60px;
+  color: white;
 }
 
-#pause {
-  padding: 0px 15px 0px 15px;
-}
-
-#stop {
-  padding: 0px 15px 0px 15px;
+.material-icons:hover {
+  color: #9bdea4;
 }
 
 button {
@@ -54,4 +48,44 @@ i {
   align-items: center;
   display: inline-flex;
   padding: 15px;
+}
+
+.songplayer{
+  width: 100%;
+}
+.volumen{
+  width: 97%;
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+}
+
+.botones{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.tiempo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.tiempoinicio , .tiempofin {
+ color: white;
+}
+
+.barratiempo {
+  width: 80%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+i {
+  color:#9bdea4;
 }

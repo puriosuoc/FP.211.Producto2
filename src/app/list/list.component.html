@@ -4,21 +4,24 @@
 
     <div class="filtros">
 
-      <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar canciones">
+      <input type="text" [(ngModel)]="searchTittle" placeholder="Buscar canciones">
+      <input type="text" [(ngModel)]="searchSubtittle" placeholder="Buscar Artista">
 
     </div>
 
-      <ul class="songs">
-        <li *ngFor="let song of songs"
-            [class.selected]="song === selectedSong"
-            (click)="onSelect(song)">
-          <div class="songlist">
-            <div class="portada"><img src="{{song.image}}" class="miniportada"></div>
-            <div class="titulo">{{song.tittle}}</div>
-            <div class="subtitulo">{{song.subtittle}}</div>
-          </div>
-        </li>
-      </ul>
+    <ul class="songs">
+      <ng-container *ngFor="let song of songs">
+        <div *ngIf="song.tittle.toLowerCase().includes(searchTittle.toLowerCase()) && song.subtittle.toLowerCase().includes(searchSubtittle.toLowerCase())">
+          <li [class.selected]="song === selectedSong" (click)="onSelect(song)">
+            <div class="songlist">
+              <div class="portada"><img src="{{song.image}}" class="miniportada"></div>
+              <div class="titulo">{{song.tittle}}</div>
+              <div class="subtitulo">{{song.subtittle}}</div>
+            </div>
+          </li>
+        </div>
+      </ng-container>
+    </ul>
 
   </div>
 

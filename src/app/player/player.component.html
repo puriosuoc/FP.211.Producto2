@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="player">
+  <div *ngIf="selectedSong" class="player">
 
     <div class="player__controls">
 
@@ -18,7 +18,9 @@
 
     </div>
 
-
+    <div class="name" >
+      <audio controls src="{{selectedSong.url}}"></audio>
+    </div>
 
   </div>
 

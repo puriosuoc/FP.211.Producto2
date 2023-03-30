@@ -12,7 +12,8 @@ export class ListComponent implements OnInit {
 
   public songs: Song[];
   selectedSong: Song | undefined;
-  searchTerm: string = '';
+  searchTittle: string = '';
+  searchSubtittle: string = '';
 
   constructor(protected songService: SongService) {
     this.songs = [];

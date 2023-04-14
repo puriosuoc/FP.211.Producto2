@@ -3,22 +3,6 @@
 
   <div *ngIf="selectedSong" class="player">
 
-    <!--<div class="player__controls">
-
-      <div class="player__btn player__btn--medium blue play" id="play">
-        <button class="player__btn player__btn--medium blue play" ><i class="fi fi-sr-play"></i></button>
-      </div>
-
-      <div class="player__btn player__btn--medium" id="pause">
-        <button  class="player__btn player__btn--medium" ><i class="fi fi-sr-pause"></i></button>
-      </div>
-
-      <div class="player__btn player__btn--medium" id="stop">
-        <button  class="player__btn player__btn--medium" ><i class="fi fi-sr-stop"></i></button>
-      </div>
-
-    </div>-->
-
     <div class="songplayer">
       <div class="volumen">
         <i class="fi fi-sr-volume"></i>
@@ -28,24 +12,33 @@
           <div class="tiempoinicio">
             {{ secondsToString(audio.currentTime) }}
           </div>
-          <div class="barratiempo">
-            <progress style="width: 100%;" [value]="audio.currentTime" [max]="audio.duration"></progress>
-          </div>
-          <div class="tiempofin">
+<!--
+        <div class="barratiempo" (click)="onProgressClick($event)">
+          <progress class="progress-bar" [value]="audio.currentTime" [max]="audio.duration"></progress>
+        </div>-->
+        <div class="barratiempo" (click)="onProgressClick($event)">
+          <progress class="progress-bar" [value]="audio.currentTime" [max]="audio.duration"></progress>
+          <div class="circle" [style.--percent]="progress / 100"></div>
+        </div>
+
+
+        <div class="tiempofin">
             {{ secondsToString(audio.duration) }}
           </div>
       </div>
+
       <div class="botones">
-            <div class="play">
-              <span class="material-icons" (click)="playSound()" >
-                play_circle
-              </span>
-            </div>
+
             <div class="pause">
                 <span class="material-icons" (click)="pauseSound()" >
                   pause_circle
                 </span>
             </div>
+        <div class="play">
+              <span class="material-icons played" (click)="playSound()"  [ngClass]="{ 'active': buttonActive }" >
+                play_circle
+              </span>
+        </div>
             <div class="stop">
                 <span class="material-icons" (click)="stopSound()">
                   stop_circle

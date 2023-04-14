@@ -12,6 +12,11 @@ export class PlayerComponent implements OnInit {
   cursor = 0;
   audio: HTMLAudioElement = new Audio('');
   playing: boolean = false;
+  buttonActive = false;
+  currentTime: number = 0;
+
+  circlePosition = '0%';
+
 
   constructor(protected songService: SongService) {}
   progress = 0;
@@ -20,26 +25,33 @@ export class PlayerComponent implements OnInit {
     this.songService.playEvent.subscribe((song: Song) => {
       this.selectedSong = song;
       this.audio.volume = 0.3;
+      this.buttonActive = false;
     });
   }
 
   playSound() {
     if (this.selectedSong) {
       this.audio.src = this.selectedSong.url;
+      this.audio.currentTime = this.currentTime;
       this.audio.play();
       this.updateProgress();
       this.playing = true;
+      this.buttonActive = true;
     }
   }
 
   pauseSound() {
     this.audio.pause();
     this.playing = false;
+    this.buttonActive = false;
+    this.currentTime = this.audio.currentTime;
   }
+
   stopSound() {
     this.audio.pause();
     this.audio.currentTime = 0;
     this.playing = false;
+    this.buttonActive = false;
   }
 
   updateProgress() {
@@ -49,10 +61,18 @@ export class PlayerComponent implements OnInit {
       this.updateProgress();
     }, 1000)
 
-
-
     console.log("Progreso:" + this.audio.currentTime);
   }
+
+  onProgressClick(event: MouseEvent) {
+    const rect = (<HTMLDivElement>event.target).getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const width = rect.width;
+    const percent = x / width;
+    const newTime = percent * this.audio.duration;
+    this.audio.currentTime = newTime;
+  }
+
   secondsToString(seconds: number): string {
     if (isNaN(seconds)) seconds = 0;
 
@@ -65,6 +85,8 @@ export class PlayerComponent implements OnInit {
 
     return `${hour}:${minute}:${second}`;
   }
+
+
 
 }
 

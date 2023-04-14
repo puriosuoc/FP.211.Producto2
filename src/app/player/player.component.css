@@ -39,7 +39,8 @@ button:hover {
 
 i {
   font-size: 20px;
-  padding-top: 10px;
+  padding-top: 4px;
+  color:#9bdea4;
 }
 
 .player__controls {
@@ -52,12 +53,6 @@ i {
 
 .songplayer{
   width: 100%;
-}
-.volumen{
-  width: 97%;
-  display: flex;
-  justify-content: right;
-  margin-top: 10px;
 }
 
 .botones{
@@ -82,10 +77,123 @@ i {
 
 .barratiempo {
   width: 80%;
-  padding-right: 15px;
-  padding-left: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
-i {
-  color:#9bdea4;
+
+.material-icons.active {
+  color: #9bdea4;
+}
+
+.material-icons:active {
+  font-size: 55px;
+  line-height: 60px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.play, .pause, .stop {
+  width: 60px;
+
+}
+
+.volumen{
+  width: 97%;
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.volumen i {
+  margin-right: 8px;
+}
+
+.volumen input[type="range"] {
+
+  height: 2px;
+  margin: 0;
+  background-color: #7f7f80;
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+
+.volumen input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #9bdea4;
+  border-radius: 50%;
+}
+
+.volumen input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #666;
+  border-radius: 50%;
+}
+
+#valor {
+  margin-left: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.progress-bar::-webkit-progress-value {
+  background-color: #9bdea4;
+  border-radius: 10px;
+}
+
+.progress-bar::-moz-progress-bar {
+  background-color: #007bff;
+  border-radius: 10px;
+}
+
+/*HOLA*/
+
+.barratiempo {
+  position: relative;
+}
+
+.barratiempo progress {
+  width: 100%;
+  height: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ccc;
+  border-radius: 2px;
+  outline: none;
+  position: relative;
+}
+
+.barratiempo progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+.barratiempo progress::-webkit-progress-value {
+  background-color: #9bdea4;
+  border-radius: 2px;
+}
+
+.barratiempo .circle {
+  position: absolute;
+  top: -2px;
+  left: calc(var(--percent) * 100%);
+  width: 20px;
+  height: 20px;
+  background-color: #9bdea4;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateX(-50%);
+  box-shadow: 1px 1px 6px rgba(2, 2, 2, 0.63);
+
 }

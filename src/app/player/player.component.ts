@@ -7,8 +7,10 @@ import {SongService} from "../song.service";
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css']
 })
+
 export class PlayerComponent implements OnInit {
   selectedSong: Song | null = null;
+
   cursor = 0;
   audio: HTMLAudioElement = new Audio('');
   playing: boolean = false;
@@ -17,16 +19,27 @@ export class PlayerComponent implements OnInit {
 
   circlePosition = '0%';
 
-
   constructor(protected songService: SongService) {}
   progress = 0;
 
   ngOnInit() {
     this.songService.playEvent.subscribe((song: Song) => {
+      this.stopCurrentSong();
+
       this.selectedSong = song;
-      this.audio.volume = 0.3;
+      this.audio.src = this.selectedSong.url;
+      this.audio.currentTime = this.currentTime;
       this.buttonActive = false;
+      this.currentTime = 0;
     });
+  }
+
+  stopCurrentSong() {
+    this.audio.pause();
+    this.playing = false;
+    this.buttonActive = false;
+    this.currentTime = 0;
+    this.progress = 0;
   }
 
   playSound() {
@@ -85,8 +98,6 @@ export class PlayerComponent implements OnInit {
 
     return `${hour}:${minute}:${second}`;
   }
-
-
 
 }
 

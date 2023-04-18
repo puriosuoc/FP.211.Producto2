@@ -99,6 +99,8 @@ i {
 
 }
 
+/* Barra de volumen */
+
 .volumen{
   width: 97%;
   display: flex;
@@ -139,6 +141,8 @@ i {
   margin-left: 8px;
 }
 
+/* Barra de progreso */
+
 .progress-bar {
   width: 100%;
   height: 5px;
@@ -156,8 +160,6 @@ i {
   background-color: #007bff;
   border-radius: 10px;
 }
-
-/*HOLA*/
 
 .barratiempo {
   position: relative;

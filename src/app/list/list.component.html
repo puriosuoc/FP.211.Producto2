@@ -3,15 +3,22 @@
   <div class="list">
 
     <div class="filtros">
-
       <input type="text" [(ngModel)]="searchTittle" placeholder="Search by Tittle" class="tittle">
-      <input type="text" [(ngModel)]="searchSubtittle" placeholder="Search by Author" class="subtittle">
-
+      <select [(ngModel)]="searchStyle" class="subtittle">
+        <option value="">Select music style</option>
+        <option value="">All</option>
+        <option>Pop</option>
+        <option>Rock</option>
+        <option>Clásica</option>
+        <option>Power Metal</option>
+        <option>Trap</option>
+        <option>Pop Rock</option>
+      </select>
     </div>
 
     <ul class="songs">
       <ng-container *ngFor="let song of songs">
-        <div *ngIf="song.tittle.toLowerCase().includes(searchTittle.toLowerCase()) && song.subtittle.toLowerCase().includes(searchSubtittle.toLowerCase())">
+        <div *ngIf="song.tittle.toLowerCase().includes(searchTittle.toLowerCase()) && song.style.toLowerCase().includes(searchStyle.toLowerCase())">
           <li [class.selected]="song === selectedSong" (click)="onSelect(song)">
             <div class="songlist">
               <div class="portada"><img src="{{song.image}}" class="miniportada"></div>

@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   public songs: Song[];
   selectedSong: Song | undefined;
   searchTittle: string = '';
-  searchSubtittle: string = '';
+  searchStyle: string = '';
 
   constructor(protected songService: SongService) {
     this.songs = [];

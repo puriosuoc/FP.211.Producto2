@@ -2,24 +2,34 @@
 
   <div class="list">
 
-    <h2>Welcome! 🥳</h2>
-      <ul class="songs">
-        <li *ngFor="let song of songs"
-            [class.selected]="song === selectedSong"
-            (click)="onSelect(song)">
-          <div class="songlist">
-            <div class="portada"><img src="{{song.url}}" class="miniportada"></div>
-            <div class="titulo">{{song.tittle}}</div>
-            <div class="subtitulo">{{song.subtittle}}</div>
-          </div>
-        </li>
-      </ul>
+    <div class="filtros">
+      <input type="text" [(ngModel)]="searchTittle" placeholder="Search by Tittle" class="tittle">
+      <select [(ngModel)]="searchStyle" class="subtittle">
+        <option value="">Select music style</option>
+        <option value="">All</option>
+        <option>Pop</option>
+        <option>Rock</option>
+        <option>Clásica</option>
+        <option>Power Metal</option>
+        <option>Trap</option>
+        <option>Pop Rock</option>
+      </select>
+    </div>
 
-  </div>
+    <ul class="songs">
+      <ng-container *ngFor="let song of songs">
+        <div *ngIf="song.tittle.toLowerCase().includes(searchTittle.toLowerCase()) && song.style.toLowerCase().includes(searchStyle.toLowerCase())">
+          <li [class.selected]="song === selectedSong" (click)="onSelect(song)">
+            <div class="songlist">
+              <div class="portada"><img src="{{song.image}}" class="miniportada"></div>
+              <div class="titulo">{{song.tittle}}</div>
+              <div class="subtitulo">{{song.subtittle}}</div>
+            </div>
+          </li>
+        </div>
+      </ng-container>
+    </ul>
 
-  <div class="song">
-    <app-song></app-song>
-    <app-player></app-player>
   </div>
 
 </div>

@@ -1,26 +1,28 @@
-  <div class="info">
+<div class="container">
 
-    <div *ngIf="selectedSong">
+  <div *ngIf="selectedSong" class="info">
 
-      <div class="cover"><img src="{{selectedSong.url}}" class="caratula"></div>
+    <div class="cover"><img src="{{selectedSong.image}}" class="caratula"></div>
 
-      <div class="name">{{selectedSong.tittle}}</div>
+    <div class="name">{{selectedSong.tittle}}</div>
 
-      <div class="songinfo">
-        <div class="item"><i class="fi fi-sr-microphone-alt"></i>{{selectedSong.artist}}</div>
-        <div class="item"><i class="fi fi-sr-user"></i>{{selectedSong.subtittle}}</div>
-        <div class="item"><i class="fi fi-sr-calendar"></i>{{selectedSong.year}}</div>
-        <div class="item"><i class="fi fi-sr-record-vinyl"></i>{{selectedSong.disc}}</div>
-        <div class="item"><i class="fi fi-sr-tags"></i>{{selectedSong.style}}</div>
-      </div>
-
+    <div class="songinfo">
+      <div class="item"><i class="fi fi-sr-microphone-alt"></i>{{selectedSong.artist}}</div>
+      <div class="item"><i class="fi fi-sr-user"></i>{{selectedSong.subtittle}}</div>
+      <div class="item"><i class="fi fi-sr-calendar"></i>{{selectedSong.year}}</div>
+      <div class="item"><i class="fi fi-sr-record-vinyl"></i>{{selectedSong.disc}}</div>
+      <div class="item"><i class="fi fi-sr-tags"></i>{{selectedSong.style}}</div>
     </div>
-    <div class="selection" *ngIf="!selectedSong">
-      <div>
-        <p class="alert">Select a song! </p>
-      </div>
+
+  </div>
+
+  <div class="selection" *ngIf="!selectedSong">
+    <div>
+      <p class="alert">Select a song! </p>
     </div>
   </div>
+
+</div>
 
 
 

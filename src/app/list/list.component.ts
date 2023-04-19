@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Song } from '../song';
 import {SongService} from "../song.service";
 
@@ -12,6 +12,8 @@ export class ListComponent implements OnInit {
 
   public songs: Song[];
   selectedSong: Song | undefined;
+  searchTittle: string = '';
+  searchStyle: string = '';
 
   constructor(protected songService: SongService) {
     this.songs = [];

@@ -5,6 +5,7 @@ export interface Song {
   year: number;
   disc: string;
   style: string;
+  image: string;
   url: string;
   discografica: string;
   formato: string;

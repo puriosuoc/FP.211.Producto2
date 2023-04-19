@@ -1,209 +1,41 @@
 /* HeroesComponent's private CSS styles */
 .container {
-  background-color: var(--background);
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: sans-serif;
-  min-height: 90vh;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .list {
-  /*width: 300px;*/
-  height: 550px;
+  width: calc(50% - 7.5px);
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 9px 9px 16px rgba(162, 162, 162, 0.6),
+  -9px -9px 16px rgba(255, 255, 255, 0.5);
+  margin-right: 10px;
+  min-height: 560px;
+}
+
+.song {
+  width: calc(50% - 7.5px);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 9px 9px 16px rgba(162, 162, 162, 0.6),
+  -9px -9px 16px rgba(255, 255, 255, 0.5);
+  margin-left: 10px;
+  min-height: 560px;
+}
+
+.player {
+  width: 100%;
+  background-color: #405061;
   border-radius: 12px;
   box-shadow: 9px 9px 16px rgba(162, 162, 162, 0.6),
   -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
 
-.info {
-  padding: 10px;
-}
-
-h2 {
-  padding-top: 30px;
-  font-size: 30px;
-  margin: 8px;
-
-}
-
-.name {
-  color: #405061;
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
-.songinfo {
-  width: 95%;
-  background-color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  border-radius: 6px;
-  position: absolute;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-}
-
-.item {
-  padding: 5px 10px 5px 10px;
-}
-
-.item > i{
-  color: #9bdea4;
-  font-size: 14px;
-  padding-right:10px;
-}
-
-.selection {
-  height: 90px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.reproductor {
-  width: 95%;
-  height: 90px;
-  background-color: #405061;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  bottom: 5px;
-  border-radius: 6px;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
-  -9px -9px 16px rgba(255, 255, 255, 0.5);
-  margin: 10px;
-  position: absolute;
-}
-
-#play {
-  padding: 0px 15px 0px 15px;
-}
-
-#pause {
-  padding: 0px 15px 0px 15px;
-}
-
-#stop {
-  padding: 0px 15px 0px 15px;
-}
-
-.song {
-  width: 500px;
-  height: 550px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  border-radius: 12px;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
-  -9px -9px 16px rgba(255, 255, 255, 0.5);
-  margin: 10px;
-  position: relative;
-}
-
-.cover {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-button {
-  border-radius: 30px;
-  width: 60px;
-  height: 60px;
-  border-style: none;
-  padding-top: 6px;
-}
-
-button:hover {
-  color: white;
-  background-color: #9bdea4;
-}
-
-i {
-  font-size: 20px;
-  padding-top: 10px;
-}
-
-.player__controls {
-  /*width: 95%;*/
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 25px;
-  display: inline-flex;
-  padding: 15px;
-}
-
-.songs {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 30em;
-}
-
-.songlist {
-  float: left;
-  display: flex;
-  align-items: center;
-}
-
-.titulo{
-  font-weight: bold;
-}
-
-.subtitulo{
-  color: #6c6c6c;
-  font-style: italic;
-}
-
-.songs li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 2.6em;
-  border-radius: 4px;
-}
-.songs li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-.songs li.selected {
-  background-color: #9bdea4;
-  color: black;
-}
-.songs li.selected:hover {
-  background-color: #BBD8DC;
-  color: black;
-}
-.songs .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color:#405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-.player_btn {
-  padding: 15px;
-}
